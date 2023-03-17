@@ -17,7 +17,7 @@ export default function Layout({ children, title }: AuxProps) {
       </Head>
 
       <div className="flex min-h-screen flex-col justify-between">
-        <header className="fixed top-0 right-0 left-0 h-10 bg-slate-300">
+        <header className="fixed top-0 right-0 left-0 h-10 bg-slate-300 z-10">
           <nav className="flex items-center px-4 justify-between h-full">
             <Link href="/" className="text-xl font-bold">
               Tamaiti
