@@ -13,7 +13,12 @@
   :root {
   }
 }
-
+#imageMagnifyer {
+  width: 250px;
+  height: 354px;
+  display: flex;
+  flex-direction: column;
+}
 * {
   box-sizing: border-box;
   padding: 0;
