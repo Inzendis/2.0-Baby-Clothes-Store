@@ -45,7 +45,7 @@ export default function Layout({
                   d="M21 18H3v-2h18v2Zm0-5H3v-2h18v2Zm0-5H3V6h18v2Z"
                 ></path>
               </svg>
-              <div className="flex flex-row">
+              <div className="flex flex-row space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"

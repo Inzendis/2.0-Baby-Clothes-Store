@@ -63,6 +63,8 @@
   margin: 0 auto;
   margin-top: 20px;
   padding-bottom: 40px;
+
+  @apply md:w-[90%] w-[70%];
 }
 .buttonContainer {
   width: 100%;
