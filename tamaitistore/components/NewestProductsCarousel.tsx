@@ -44,7 +44,7 @@ function SamplePrevArrow({ className, onClick, style }: CustomArrowProps) {
   );
 }
 
-const ProductsCarousel: React.FC = () => {
+const NewestProductsCarousel: React.FC = () => {
   const slider = React.useRef(null);
   var settings = {
     dots: true,
@@ -105,4 +105,4 @@ const ProductsCarousel: React.FC = () => {
   );
 };
 
-export default ProductsCarousel;
+export default NewestProductsCarousel;

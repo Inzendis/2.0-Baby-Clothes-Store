@@ -27,11 +27,12 @@ export default function Layout({
 
       <div className="flex h-full flex-col justify-between">
         <header
-          className={`top-0 right-0 left-0  z-10 flex items-center justify-between ${
+          className={`top-0 right-0 left-0  z-10 flex items-center justify-between w-full relative overflow-hidden ${
             typeHeader === "HomePage" ? "" : "fixed"
           }`}
         >
-          <nav className="flex flex-col w-full">
+          <div className="logoBgGradient"></div>
+          <nav className="flex flex-col w-full z-10">
             <div className="flex flex-row  mt-2 px-2 md:px-28 justify-between">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
