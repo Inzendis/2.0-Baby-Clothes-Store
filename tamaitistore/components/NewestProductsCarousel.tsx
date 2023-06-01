@@ -4,8 +4,8 @@ import { Data } from "../utils/data";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
 interface CustomArrowProps {
   className?: string | undefined;
   onClick?: React.MouseEventHandler<any> | undefined;
@@ -50,8 +50,8 @@ const NewestProductsCarousel: React.FC = () => {
     dots: true,
     infinite: false,
     speed: 0,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow: 6,
+    slidesToScroll: 6,
     vertical: false,
     arrows: true,
     nextArrow: <SampleNextArrow />,
@@ -60,8 +60,8 @@ const NewestProductsCarousel: React.FC = () => {
       {
         breakpoint: 1920,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToShow: 4,
+          slidesToScroll: 4,
           infinite: true,
           speed: 500,
           dots: true,

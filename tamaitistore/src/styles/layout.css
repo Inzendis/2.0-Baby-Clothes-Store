@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.headerContainer {
+  @apply top-0 right-0 left-0  z-10 flex items-center justify-between w-full relative overflow-hidden;
+}
+
+.navContainer {
+  @apply flex flex-col w-full z-10;
+}
+.logoBgGradient {
+  background: linear-gradient(48deg, #e94584, #24aadb);
+  position: absolute;
+
+  animation: gradient 20s linear infinite;
+  animation-direction: alternate;
+  width: 700%;
+  height: 700%;
+}
+@keyframes gradient {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(-70%, -15%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.headerContainerBoyBg {
+  background-color: #8dd0f7;
+}
+
+.headerContainerBoyBg {
+  background-color: #fab4d1;
+}
+
+.footerContainerGirl {
+  background-color: #b59ca6;
+  @apply flex flex-row h-[302px] w-full justify-center right-0 left-0 bottom-0;
+}
+
+.footerContainerBoy {
+  background-color: #83949e;
+  @apply flex flex-row h-[302px] w-full justify-center right-0 left-0 bottom-0;
+}
+
+.footerInnerContentsContainer {
+  @apply w-[90%] border-t-2 border-black bottom-2 my-14 border-dashed;
+}
