@@ -17,6 +17,18 @@ export default function Layout({
   colorHeader,
   typeHeader,
 }: AuxProps) {
+  let headerType;
+  switch (typeHeader) {
+    case "HomePage":
+      headerType = "logoBgGradient";
+      break;
+    case "Boy":
+      headerType = "headerContainerBoyBg";
+      break;
+    case "Girl":
+      headerType = "headerContainerGirlBg";
+      break;
+  }
   return (
     <>
       <Head>
@@ -27,12 +39,12 @@ export default function Layout({
 
       <div className="flex h-full flex-col justify-between">
         <header
-          className={`top-0 right-0 left-0  z-10 flex items-center justify-between w-full relative overflow-hidden ${
-            typeHeader === "HomePage" ? "" : "fixed"
+          className={`headerContainer ${
+            typeHeader !== "HomePage" ? "fixed" : ""
           }`}
         >
-          <div className="logoBgGradient"></div>
-          <nav className="flex flex-col w-full z-10">
+          <div className={headerType}></div>
+          <nav className="navContainer">
             <div className="flex flex-row  mt-2 px-2 md:px-28 justify-between">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +57,7 @@ export default function Layout({
                   d="M21 18H3v-2h18v2Zm0-5H3v-2h18v2Zm0-5H3V6h18v2Z"
                 ></path>
               </svg>
-              <div className="flex flex-row">
+              <div className="flex flex-row space-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="2em"
@@ -117,7 +129,7 @@ export default function Layout({
             colorHeader === "Boy" ? "footerContainerBoy" : "footerContainerGirl"
           }`}
         >
-          <div className="w-[90%] border-t-2 border-black bottom-2 my-14 border-dashed">
+          <div className="footerInnerContentsContainer">
             <div className="flex flex-row text-lg justify-between">
               <ul className="list-none py-6">
                 <li>
