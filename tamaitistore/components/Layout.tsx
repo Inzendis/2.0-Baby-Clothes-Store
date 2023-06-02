@@ -20,7 +20,7 @@ export default function Layout({
   let headerType;
   switch (typeHeader) {
     case "HomePage":
-      headerType = "logoBgGradient";
+      headerType = "md:logoBgGradient logoMobileBgGradient";
       break;
     case "Boy":
       headerType = "headerContainerBoyBg";

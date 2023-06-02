@@ -15,7 +15,11 @@ export default function ProductScreen() {
   }
 
   return (
-    <Layout title={product.name} colorHeader="Boy" typeHeader="">
+    <Layout
+      title={product.name}
+      colorHeader={product.gender === "boy" ? "Boy" : "Girl"}
+      typeHeader=""
+    >
       <div className="py-2">
         <Link href="/">back to products</Link>
         <div className="flex flex-col pt-4 px-4">

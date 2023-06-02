@@ -10,10 +10,10 @@
   @apply flex flex-col w-full z-10;
 }
 .logoBgGradient {
-  background: linear-gradient(48deg, #e94584, #24aadb);
+  background: linear-gradient(48deg, #5cb8ed, #ed5c98);
   position: absolute;
 
-  animation: gradient 20s linear infinite;
+  animation: gradient 16s linear infinite;
   animation-direction: alternate;
   width: 700%;
   height: 700%;
@@ -24,6 +24,27 @@
   }
   50% {
     transform: translate(-70%, -15%);
+  }
+  100% {
+    transform: translate(0%, 0%);
+  }
+}
+
+.logoMobileBgGradient {
+  background: linear-gradient(48deg, #5cb8ed, #ed5c98);
+  position: absolute;
+  overflow-y: hidden;
+  animation: gradient 8s linear infinite;
+  animation-direction: alternate;
+  width: 400%;
+  height: 300%;
+}
+@keyframes gradient {
+  0% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(-75%, 0%);
   }
   100% {
     transform: translate(0%, 0%);
@@ -45,7 +66,7 @@
 
 .footerContainerBoy {
   background-color: #83949e;
-  @apply flex flex-row h-[302px] w-full justify-center right-0 left-0 bottom-0;
+  @apply flex flex-row h-[350px] md:h-[302px] w-full justify-center right-0 left-0 bottom-0;
 }
 
 .footerInnerContentsContainer {
