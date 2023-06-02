@@ -99,8 +99,8 @@ export default function Layout({
                 typeHeader !== "HomePage" ? "hidden" : ""
               } `}
             >
-              <a>Browse Our Products</a>
-              <div className="flex flex-row md:space-x-12 mb-4">
+              <a className="text-xl font-bold">Browse Our Products</a>
+              <div className="flex flex-col -space-y-4 md:space-y-0 md:flex-row md:space-x-12 mb-4">
                 <div className="buttonContainer">
                   <a href="#" className="button">
                     <div className="button__line"></div>
