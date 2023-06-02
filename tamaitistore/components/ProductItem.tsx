@@ -8,7 +8,7 @@ interface ProductDetailsProps {
 
 const ProductItem: React.FC<ProductDetailsProps> = ({ product }) => {
   return (
-    <div className="justify-center flex flex-col items-center pb-2 ">
+    <div className="justify-center flex flex-col items-center py-4">
       <Link href={`/product/${product.slug}`}>
         <img
           src={product.image}
@@ -16,7 +16,7 @@ const ProductItem: React.FC<ProductDetailsProps> = ({ product }) => {
           className="flex rounded shadow w-full object-cover min-h-full h-[200px] md:h-[350px]"
         ></img>
       </Link>
-      <div className="flex flex-col items-center justify-center pt-5">
+      <div className="flex flex-col items-center justify-center pt-2">
         <Link href={`/product/${product.slug}`}>
           <h2 className="text-lg">{product.name} </h2>
         </Link>
