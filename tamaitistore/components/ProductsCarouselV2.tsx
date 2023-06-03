@@ -16,7 +16,7 @@ const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
   const [swipe, setSwipe] = useState<any>();
   return (
     <div className="flex flex-row relative items-center">
-      <div className="hidden lg:flex md:top-40 absolute">
+      <div className="hidden lg:flex md:top-40 pb-36">
         <button
           className="md:w-24 md:h-16 flex md:justify-end self-center"
           onClick={() => swipe?.slidePrev()}
@@ -24,6 +24,7 @@ const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
           <IoIosArrowBack className="w-16 h-16" />
         </button>
       </div>
+
       <Swiper
         modules={[Navigation, Pagination, A11y]}
         spaceBetween={50}
@@ -66,7 +67,7 @@ const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="hidden lg:flex md:top-40 right-0 absolute justify-end">
+      <div className="hidden lg:flex justify-end pb-36">
         <button
           className="md:w-24 md:h-16 flex"
           onClick={() => swipe?.slideNext()}

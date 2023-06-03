@@ -7,26 +7,28 @@ import Image from "next/image";
 interface AuxProps {
   children: React.ReactNode;
   title: string;
-  colorHeader: string;
-  typeHeader: string;
+  typeHeaderAndFooter: string;
 }
 
 export default function Layout({
   children,
   title,
-  colorHeader,
-  typeHeader,
+  typeHeaderAndFooter,
 }: AuxProps) {
   let headerType;
-  switch (typeHeader) {
+  let footerType;
+  switch (typeHeaderAndFooter) {
     case "HomePage":
       headerType = "md:logoBgGradient logoMobileBgGradient";
+      footerType = "footerContainerGirl";
       break;
-    case "Boy":
+    case "boy":
       headerType = "headerContainerBoyBg";
+      footerType = "footerContainerBoy";
       break;
-    case "Girl":
+    case "girl":
       headerType = "headerContainerGirlBg";
+      footerType = "footerContainerGirl";
       break;
   }
   return (
@@ -40,7 +42,7 @@ export default function Layout({
       <div className="flex h-full flex-col justify-between">
         <header
           className={`headerContainer ${
-            typeHeader !== "HomePage" ? "fixed" : ""
+            typeHeaderAndFooter !== "HomePage" ? "fixed" : ""
           }`}
         >
           <div className={headerType}></div>
@@ -84,7 +86,7 @@ export default function Layout({
             </div>
             <div
               className={`flex justify-center ${
-                typeHeader !== "HomePage" ? "hidden" : ""
+                typeHeaderAndFooter !== "HomePage" ? "hidden" : ""
               } `}
             >
               <Image
@@ -96,91 +98,90 @@ export default function Layout({
             </div>
             <div
               className={`flex flex-col items-center ${
-                typeHeader !== "HomePage" ? "hidden" : ""
+                typeHeaderAndFooter !== "HomePage" ? "hidden" : ""
               } `}
             >
               <a className="text-xl font-bold">Browse Our Products</a>
               <div className="flex flex-col -space-y-4 md:space-y-0 md:flex-row md:space-x-12 mb-4">
                 <div className="buttonContainer">
-                  <a href="#" className="button">
+                  <button className="button">
                     <div className="button__line"></div>
                     <div className="button__line"></div>
                     <span className="button__text">Boy</span>
                     <div className="button__drow1"></div>
                     <div className="button__drow2"></div>
-                  </a>
+                  </button>
                 </div>
                 <div className="buttonContainer">
-                  <a href="#" className="button">
+                  <button className="button">
                     <div className="button__line"></div>
                     <div className="button__line"></div>
                     <span className="button__text">Girl</span>
                     <div className="button__drow3"></div>
                     <div className="button__drow4"></div>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </nav>
         </header>
         <main>{children}</main>
-        <footer
-          className={`${
-            colorHeader === "Boy" ? "footerContainerBoy" : "footerContainerGirl"
-          }`}
-        >
+        <footer className={`${footerType}`}>
           <div className="footerInnerContentsContainer">
-            <div className="flex flex-row text-lg justify-between">
-              <ul className="list-none py-6">
-                <li>
-                  <Link href="/">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-[25px] h-[25px]"
-                      viewBox="0 0 256 256"
-                    >
-                      <path
-                        fill="#1877F2"
-                        d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.307 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.347-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.958 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"
-                      ></path>
-                      <path
-                        fill="#FFF"
-                        d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165h29.825"
-                      ></path>
-                    </svg>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/">FAQ's</Link>
-                </li>
-                <li>
-                  <Link href="/">Privacy Statement</Link>
-                </li>
-                <li>
-                  <Link href="/">Terms & Conditions</Link>
-                </li>
-                <li>
-                  <Link href="/">Shipping & Returns</Link>
-                </li>
-                <li>
-                  <Link href="/">Terms of Service</Link>
-                </li>
-                <li>
-                  <button>Refund policy</button>
-                </li>
-              </ul>
+            <div className="grid py-4">
+              <Link
+                href="/"
+                className="py-2 justify-self-center lg:justify-self-start"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[30px] lg:w-[24px] h-full"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    fill="#1877F2"
+                    d="M256 128C256 57.308 198.692 0 128 0C57.308 0 0 57.307 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.347-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.958 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"
+                  ></path>
+                  <path
+                    fill="#FFF"
+                    d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A128.959 128.959 0 0 0 128 256a128.9 128.9 0 0 0 20-1.555V165h29.825"
+                  ></path>
+                </svg>
+              </Link>
+              <div className="text-lg justify-between flex flex-col text-center md:text-left md:flex-row space-y-3 lg:space-y-0">
+                <ul className="list-none">
+                  <li>
+                    <Link href="/">FAQ's</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Privacy Statement</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Terms & Conditions</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Shipping & Returns</Link>
+                  </li>
+                  <li>
+                    <Link href="/">Terms of Service</Link>
+                  </li>
+                  <li>
+                    <button>Refund policy</button>
+                  </li>
+                </ul>
 
-              <ul className="list-none py-6 text-right">
-                <li>
-                  <a>Contact Us</a>
-                </li>
-                <li>
-                  <a>787-###-####</a>
-                </li>
-                <li>
-                  <a>tamaitipr@gmail.com</a>
-                </li>
-              </ul>
+                <ul className="list-none text-center md:text-right">
+                  <li>
+                    <a>Contact Us</a>
+                  </li>
+                  <li>
+                    <a>787-###-####</a>
+                  </li>
+                  <li>
+                    <a>tamaitipr@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </footer>

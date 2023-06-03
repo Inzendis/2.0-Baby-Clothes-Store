@@ -7,11 +7,15 @@ import { Data } from "../../utils/data";
 
 export default function Home() {
   return (
-    <Layout title="Home" typeHeader="HomePage" colorHeader="Girl">
-      <div className="mt-6">
-        <div className="flex px-4 md:px-32 justify-between items-end">
-          <a className="text-xl lg:text-5xl">Latest Releases</a>
-          <a className="text-xl lg:text-2xl"> See All</a>
+    <Layout title="Home" typeHeaderAndFooter="HomePage">
+      <div className="mt-10 lg:mt-6 px-6 lg:px-0">
+        <div className="flex justify-between items-end self-center relative  lg:pb-2 lg:px-[120px] pt-4">
+          <a className="text-xl lg:text-5xl md:left-0 md:absolute  lg:static font-semibold">
+            Latest Releases
+          </a>
+          <a className="text-xl lg:text-2xl md:right-1 md:absolute lg:pr-4 lg:static font-semibold">
+            See All
+          </a>
         </div>
 
         <ProductsCarouselV2 products={Data} />
