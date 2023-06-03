@@ -61,14 +61,14 @@
 
 .footerContainerGirl {
   background-color: #b59ca6;
-  @apply flex flex-row h-[302px] w-full justify-center right-0 left-0 bottom-0;
+  @apply flex flex-row h-[400px] md:h-[302px] w-full justify-center right-0 left-0 bottom-0;
 }
 
 .footerContainerBoy {
   background-color: #83949e;
-  @apply flex flex-row h-[350px] md:h-[302px] w-full justify-center right-0 left-0 bottom-0;
+  @apply flex flex-row h-[400px] md:h-[302px] w-full justify-center right-0 left-0 bottom-0;
 }
 
 .footerInnerContentsContainer {
-  @apply w-[90%] border-t-2 border-black bottom-2 my-14 border-dashed;
+  @apply w-[90%] border-t-2 border-black bottom-2 my-10 md:my-14 border-dashed;
 }

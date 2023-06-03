@@ -13,7 +13,7 @@ const ProductItem: React.FC<ProductDetailsProps> = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="flex rounded shadow w-full object-cover min-h-full h-[200px] md:h-[350px]"
+          className="flex rounded shadow w-full object-cover min-h-full h-[250px] md:h-[350px]"
         ></img>
       </Link>
       <div className="flex flex-col items-center justify-center pt-2">
