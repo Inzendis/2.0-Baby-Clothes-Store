@@ -7,41 +7,50 @@ interface ProductDetailsProps {
 }
 
 const ProductItem: React.FC<ProductDetailsProps> = ({ product }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Create state
+  const [currentVariantIndex, setCurrentVariantIndex] = useState(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleTouchStart = () => {
-    // Start a timeout
     timeoutRef.current = setInterval(() => {
-      setCurrentImageIndex(
+      setCurrentVariantIndex(
         (prevIndex) => (prevIndex + 1) % product.variants.length
       );
-    }, 500);
+    }, 1000);
   };
 
   const handleTouchEnd = () => {
-    // Clear the timeout
     if (timeoutRef.current) {
       clearInterval(timeoutRef.current);
       timeoutRef.current = null;
     }
-    setCurrentImageIndex(0);
+    setCurrentVariantIndex(0);
   };
 
   const handleMouseEnter = (index: number) => {
-    setCurrentImageIndex(index);
+    setCurrentVariantIndex(index);
   };
 
   const handleMouseLeave = () => {
-    setCurrentImageIndex(0);
+    setCurrentVariantIndex(0);
   };
+
+  // Calculate the possibly discounted price
+  const variant = product.variants[currentVariantIndex];
+  const currentDate = new Date();
+  const originalPrice = variant.price;
+  let displayedPrice = originalPrice;
+
+  if (variant.discount && currentDate <= variant.discount.endDate) {
+    const discountAmount = originalPrice * (variant.discount.percent / 100);
+    displayedPrice = originalPrice - discountAmount;
+  }
 
   return (
     <div className="justify-center flex flex-col items-center py-4">
       <Link href={`/product/${product.slug}`}>
         <div className="relative">
           <img
-            src={product.variants[currentImageIndex].image}
+            src={variant.image}
             alt={product.name}
             className="flex rounded shadow w-full object-cover min-h-full h-[250px] md:h-[350px]"
             onTouchStart={handleTouchStart}
@@ -66,8 +75,13 @@ const ProductItem: React.FC<ProductDetailsProps> = ({ product }) => {
             <h2 className="text-lg">{product.name} </h2>
           </div>
         </Link>
+        {variant.discount && currentDate <= variant.discount.endDate && (
+          <p className="text-red-500">
+            ${originalPrice.toFixed(2)} (-{variant.discount.percent}%)
+          </p>
+        )}
+        <p>${displayedPrice.toFixed(2)}</p>
 
-        <p>${product.price}</p>
         <button className="primary-button" type="button">
           Add to cart
         </button>

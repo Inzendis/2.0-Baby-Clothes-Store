@@ -3,5 +3,13 @@
 @tailwind utilities;
 
 .mySwiper {
-  @apply w-[100%] h-[400px] md:h-[525px];
+  @apply w-[100%] h-[430px] md:h-[525px];
+}
+
+.mySwiperBgGirl {
+  background-color: #f2cfde6c;
+}
+
+.mySwiperBgBoy {
+  background-color: #b4e0fa76;
 }

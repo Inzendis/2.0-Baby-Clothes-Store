@@ -145,7 +145,7 @@ export default function Layout({
             <div className="grid py-4">
               <Link
                 href="/"
-                className="py-2 justify-self-center lg:justify-self-start"
+                className="py-2 justify-self-center md:justify-self-start"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

@@ -10,11 +10,26 @@ import "swiper/css/bundle";
 import { useState } from "react";
 interface ProductsCarouselProps {
   products: IData[];
+  typeBg: string;
 }
 
-const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
+const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({
+  products,
+  typeBg,
+}) => {
   const [swipe, setSwipe] = useState<any>();
 
+  let carouselBG;
+  switch (typeBg) {
+    case "boy":
+      carouselBG = "mySwiperBgBoy";
+
+      break;
+    case "girl":
+      carouselBG = "mySwiperBgGirl";
+
+      break;
+  }
   return (
     <div className="flex flex-row relative items-center">
       <div className="hidden lg:flex md:top-40 pb-36">
@@ -34,7 +49,7 @@ const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
         pagination={{ clickable: true }}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
-        className="mySwiper"
+        className={`mySwiper ${carouselBG}`}
         breakpoints={{
           2000: {
             slidesPerView: 5,
