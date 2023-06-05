@@ -39,15 +39,15 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="flex h-full flex-col justify-between">
+      <div className="flex h-full flex-col ">
         <header
           className={`headerContainer ${
             typeHeaderAndFooter !== "HomePage" ? "fixed" : ""
           }`}
         >
           <div className={headerType}></div>
-          <nav className="navContainer">
-            <div className="flex flex-row  mt-2 px-2 md:px-28 justify-between">
+          <nav className={`navContainer`}>
+            <div className="flex flex-row  my-4 px-2 md:px-28 justify-between">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="2em"
@@ -104,22 +104,36 @@ export default function Layout({
               <a className="text-xl font-bold">Browse Our Products</a>
               <div className="flex flex-col -space-y-4 md:space-y-0 md:flex-row md:space-x-12 mb-4">
                 <div className="buttonContainer">
-                  <button className="button">
-                    <div className="button__line"></div>
-                    <div className="button__line"></div>
-                    <span className="button__text">Boy</span>
-                    <div className="button__drow1"></div>
-                    <div className="button__drow2"></div>
-                  </button>
+                  <Link
+                    href={{
+                      pathname: `/productCatalog`,
+                      query: { gender: "boy" },
+                    }}
+                  >
+                    <button className="button">
+                      <div className="button__line"></div>
+                      <div className="button__line"></div>
+                      <span className="button__text">Boy</span>
+                      <div className="button__drow1"></div>
+                      <div className="button__drow2"></div>
+                    </button>
+                  </Link>
                 </div>
                 <div className="buttonContainer">
-                  <button className="button">
-                    <div className="button__line"></div>
-                    <div className="button__line"></div>
-                    <span className="button__text">Girl</span>
-                    <div className="button__drow3"></div>
-                    <div className="button__drow4"></div>
-                  </button>
+                  <Link
+                    href={{
+                      pathname: `/productCatalog`,
+                      query: { gender: "girl" },
+                    }}
+                  >
+                    <button className="button">
+                      <div className="button__line"></div>
+                      <div className="button__line"></div>
+                      <span className="button__text">Girl</span>
+                      <div className="button__drow3"></div>
+                      <div className="button__drow4"></div>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

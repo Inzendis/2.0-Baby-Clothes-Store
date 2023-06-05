@@ -53,10 +53,16 @@
 
 .headerContainerBoyBg {
   background-color: #8dd0f7;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.headerContainerBoyBg {
+.headerContainerGirlBg {
   background-color: #fab4d1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .footerContainerGirl {

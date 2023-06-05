@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.boyOnCatalog {
+  background-color: #8dd0f7;
+  @apply border-r-2 border-black text-xl;
+}
+
+.boyOffCatalog {
+  background-color: #152833;
+  color: white;
+  @apply text-xl;
+}
+
+.girlOnCatalog {
+  background-color: #fab4d1;
+  @apply border-l-2 border-black text-xl;
+}
+
+.girlOffCatalog {
+  background-color: #492f3a;
+  color: white;
+  @apply text-xl;
+}

@@ -14,6 +14,7 @@ interface ProductsCarouselProps {
 
 const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
   const [swipe, setSwipe] = useState<any>();
+
   return (
     <div className="flex flex-row relative items-center">
       <div className="hidden lg:flex md:top-40 pb-36">
@@ -61,11 +62,13 @@ const ProductsCarouselV2: React.FC<ProductsCarouselProps> = ({ products }) => {
           },
         }}
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.slug}>
-            <ProductItem product={product} key={product.slug}></ProductItem>
-          </SwiperSlide>
-        ))}
+        {products
+          .sort((a, b) => b.date.getTime() - a.date.getTime()) // sorts by date
+          .map((product) => (
+            <SwiperSlide key={product.slug}>
+              <ProductItem product={product} />
+            </SwiperSlide>
+          ))}
       </Swiper>
       <div className="hidden lg:flex justify-end pb-36">
         <button

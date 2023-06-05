@@ -8,7 +8,7 @@ import { Data } from "../../utils/data";
 export default function Home() {
   return (
     <Layout title="Home" typeHeaderAndFooter="HomePage">
-      <div className="mt-10 lg:mt-6 px-6 lg:px-0">
+      <div className=" md:pt-8 :mt-6 px-6 lg:px-0">
         <div className="flex justify-between items-end self-center relative  lg:pb-2 lg:px-[120px] pt-4">
           <a className="text-xl lg:text-5xl md:left-0 md:absolute  lg:static font-semibold">
             Latest Releases
