@@ -35,7 +35,7 @@ export default function ProductScreen() {
               <div className="lg:flex flex-col justify-between lg:justify-start text-xl hidden flex-grow">
                 <div className="flex flex-row justify-between text-5xl">
                   <h1>{product.name}</h1>
-                  <h1>${product.price}</h1>
+                  <h1>${product.variants[0].price}</h1>
                 </div>
                 <ul className="pt-4 text-2xl">
                   Includes:
@@ -66,7 +66,7 @@ export default function ProductScreen() {
           <div className="flex flex-col justify-between lg:hidden">
             <div className="flex flex-row justify-between py-4 text-3xl">
               <h1>{product.name}</h1>
-              <h1 className="flex lg:self-end">${product.price}</h1>
+              <h1 className="flex lg:self-end">${product.variants[0].price}</h1>
             </div>
             <ul className="text-xl">
               Includes:
